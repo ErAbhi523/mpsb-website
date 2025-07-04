@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us – MPSB Business Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+    }
+
+    header {
+      background: #002b5c;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    header img {
+      height: 45px;
+      margin-right: 12px;
+    }
+
+    header a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.07);
+    }
+
+    h2 {
+      color: #002b5c;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .section {
+      margin: 20px 0;
+    }
+
+    .contact-info {
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .contact-info strong {
+      display: block;
+      margin-top: 15px;
+      color: #002b5c;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background: #002b5c;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .socials {
+      margin-top: 20px;
+    }
+
+    .socials a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #002b5c;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      background: #002b5c;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      form input, form textarea {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html"><img src="logo.png" alt="Logo">MPSB Business Care</a>
+</header>
+
+<div class="container">
+  <h2>Contact Us</h2>
+
+  <div class="section">
+    <p>We are here to help you 7 days a week and respond within 24 hours.</p>
+  </div>
+
+  <div class="section contact-info">
+    <strong>Registered Address:</strong>
+    Lig 29 Ratanpur Panki, Kanpur 208020 (UP), India.<br>
+    +91-9458835051
+
+    <strong>Noida Office:</strong>
+    H-174 Sector-41 Noida-201301(UP), India.<br>
+    +91-9236033754
+
+    <strong>Kanpur Office:</strong>
+    B 1/9, Himalaya Bhawan, Shatabdi Nagar, Panki, Kanpur- 208020(UP), India.<br>
+    +91-9151911021
+
+    <strong>Bhopal Office:</strong>
+    A-81/1, Chatrasal Nagar, Phase-1, Bhopal-462022, India.<br>
+    +91-9770361019
+
+    <strong>Satna Office:</strong>
+    House No-163, Ward No-34, near Power House, Prem Vihar Colony, Satna, MP 485001<br>
+    +91-7987449657
+
+    <strong>Howrah Office:</strong>
+    Balitikuri, Naskarpara, Dasnagar Howrah-711113 (West Bengal)<br>
+    6289208698 / 9051854745
+
+    <strong>Kolhapur Address:</strong>
+    17 Line Shirol Wadi Road, Jaysingpur, Taluka Shirol, District Kolhapur, Maharashtra<br>
+    9822458807
+
+    <strong>Nagpur Office:</strong>
+    Plot No. 122, Shanti Sadan, Near Pandav Polytechnic College, Nandanvan, Nagpur - 440009<br>
+    9372560201
+
+    <strong>Other Office Locations:</strong>
+    Kolkata, Vadodara, Aurangabad (Maharashtra)
+
+    <strong>Press & Media:</strong>
+    info@mpsbbusinesscare.com<br>
+    sales@mpsbbusinesscare.com<br>
+    operations@mpsbbusinesscare.com
+  </div>
+
+  <div class="section socials">
+    <strong>Connect with us:</strong><br>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <a href="#">LinkedIn</a>
+  </div>
+
+  <div class="section">
+    <h3>General Inquiries</h3>
+    <form onsubmit="return validateForm()">
+      <label for="fname">First Name *</label>
+      <input type="text" id="fname" required>
+
+      <label for="lname">Last Name *</label>
+      <input type="text" id="lname" required>
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone *</label>
+      <input type="tel" id="phone" pattern="[0-9]{10}" required>
+
+      <label for="message">Comment or Message *</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 MPSB Business Care. All rights reserved.
+</footer>
+
+<script>
+  function validateForm() {
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!fname || !lname || !email || !phone || !message) {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Phone number must be 10 digits.");
+      return false;
+    }
+
+    alert("Thank you! Your message has been sent.");
+    return true;
+  }
+</script>
+
+</body>
+</html>

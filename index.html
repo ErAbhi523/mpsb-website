@@ -8,6 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+  });
+</script>
+
 <body>
 
 <!-- Header -->
@@ -33,14 +44,14 @@
     <nav class="nav" id="navMenu">
       <a href="#">Home</a>
       <a href="about.html">About</a>
-      <a href="#certification">Certification Services</a>
-      <a href="#cacs">CA/CS Services</a>
-      <a href="#ip">Intellectual Property</a>
-      <a href="#license">License Consultancy</a>
-      <a href="#msme">MSME Registration</a>
-      <a href="#nsic">NSIC</a>
-      <a href="#digital">Website & Digital Marketing</a>
-      <a href="#contact">Contact</a>
+      <a href="certification.html">Certification Services</a>
+      <a href="CACSServices.html">CA/CS Services</a>
+      <a href="IntellectualProperty.html">Intellectual Property</a>
+      <a href="license-consultancy.html">License Consultancy</a>
+      <a href="msme-registration.html">MSME Registration</a>
+      <a href="nsic.html">NSIC</a>
+      <a href="website-digital-marketing.html">Website & Digital Marketing</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
   </div>
