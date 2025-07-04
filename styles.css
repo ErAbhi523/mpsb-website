@@ -16,64 +16,108 @@ body {
   background: var(--gray);
   color: var(--text);
 }
-.header {
-  background: #ffffff; /* White background for gradient logo visibility */
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
+/* Header layout with two rows on desktop */
 .header-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 20px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+/* Logo spans both rows */
+.logo-block {
+  grid-row: span 2;
 }
 
 .logo-img {
-  height: 50px;
+  height: 100px;
+  max-height: 120px;
   width: auto;
-  margin-right: 10px;
 }
 
-.logo-text {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--primary); /* Dark blue for good contrast */
-  white-space: nowrap;
+/* Brand title */
+.brand-title {
+  grid-column: 2;
+  font-size: 1.6rem;
+  color: var(--primary);
+  font-weight: bold;
 }
 
+/* Nav is on 2nd row desktop */
 .nav {
+  grid-column: 2;
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.nav::-webkit-scrollbar {
-  display: none;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 5px;
 }
 
 .nav a {
   color: var(--primary);
-  margin-left: 20px;
-  white-space: nowrap;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
+
 .nav a:hover {
   color: var(--accent);
 }
+
+.hamburger {
+  display: none;
+  grid-column: 2;
+  justify-self: end;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* Responsive layout for mobile/tablet */
+@media (max-width: 768px) {
+  .header-container {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  .brand-title {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
+
+  .logo-block {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .logo-img {
+    height: 80px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    background: white;
+    display: none;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav a {
+    margin: 10px 0;
+  }
+}
+
 
 
 .hero {
@@ -270,4 +314,102 @@ button[type="submit"] {
 .whatsapp-float img {
   width: 30px;
   height: 30px;
+}
+@media (max-width: 1024px) {
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    margin: 10px;
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+    flex-direction: column;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo, .footer-links, .footer-contact {
+    text-align: center;
+  }
+
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  input, textarea, button[type="submit"] {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .footer-logo-img {
+    height: 30px;
+  }
+
+  .testimonials-grid img {
+    width: 60px;
+    height: 60px;
+  }
 }
