@@ -230,6 +230,15 @@ button[type="submit"] {
   border-radius: 6px;
   font-size: 1rem;
 }
+.logos-grid a img {
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logos-grid a:hover img {
+  transform: scale(1.05);
+}
 .enhanced-footer {
   background-color: var(--primary);
   color: white;
